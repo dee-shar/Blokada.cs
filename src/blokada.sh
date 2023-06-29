@@ -19,12 +19,6 @@ function get_devices() {
 		--user-agent "$user_agent"
 }
 
-function get_devices() {
-	curl --request GET \
-		--url "$api/device?account_id=$account_id" \
-		--user-agent "$user_agent"
-}
-
 function get_stats() {
 	curl --request GET \
 		--url "$api/stats?account_id=$account_id" \
