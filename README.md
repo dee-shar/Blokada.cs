@@ -3,7 +3,6 @@ Mobile-API for [blokada](https://play.google.com/store/apps/details?id=org.bloka
 
 ## Example
 ```cs
-using System;
 using BlokadaApi;
 
 namespace Application
