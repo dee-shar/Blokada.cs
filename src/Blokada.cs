@@ -13,7 +13,7 @@ namespace BlokadaApi
         public Blokada()
         {
             httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "blokada/23.1.10 (android-28 six release x86_64 blackshark gracelte touch api compatible)");
+            httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("blokada/23.1.10 (android-28 six release x86_64 blackshark gracelte touch api compatible)");
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
