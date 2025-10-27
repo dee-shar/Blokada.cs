@@ -1,4 +1,3 @@
-using System;
 using System.Net.Http;
 using System.Text.Json;
 using System.Net.Http.Headers;
@@ -17,6 +16,7 @@ namespace BlokadaApi
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
+        
         public async Task<string> GetAccount()
         {
             var response = await httpClient.PostAsync($"{apiUrl}/account", null);
@@ -28,21 +28,25 @@ namespace BlokadaApi
             }
             return content;
         }
+        
         public async Task<string> GetDevices()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/device?account_id={accountId}");
             return await response.Content.ReadAsStringAsync();
         }
+        
         public async Task<string> GetStats()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/stats?account_id={accountId}");
             return await response.Content.ReadAsStringAsync();
         }
+        
         public async Task<string> GetActivity()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/activity?account_id={accountId}");
             return await response.Content.ReadAsStringAsync();
         }
+        
         public async Task<string> GetLease()
         {
             var response = await httpClient.GetAsync($"{apiUrl}/lease?account_id={accountId}");
